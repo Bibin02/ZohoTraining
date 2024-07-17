@@ -4,16 +4,7 @@
  */
 import java.util.Scanner;
 
-class AnnerT1Q1 {
-    public static void main(String[] args) {
-        System.out.println(90);
-    }
-    
-}
 class T1Q1 {
-    static{
-        System.out.println(30);
-    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
