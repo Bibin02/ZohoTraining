@@ -1,0 +1,19 @@
+// Login
+psql -h %server% -U %username% -d %database% -p %port% 
+
+create database empmgmt;
+
+\c empmgmt
+
+create table empdetails (emp_no int primary key, emp_name varchar(25), emp_age int, emp_address varchar(50), emp_phone int);
+
+insert into empdetails values (101, 'emp1', 23, 'address1', 1001);
+insert into empdetails values (102, 'emp2', 25, 'address2', 1002);
+insert into empdetails values (103, 'emp3', 35, 'address3', 1003);
+insert into empdetails values (104, 'emp4', 45, 'address4', 1004);
+
+update empdetails set emp_address = 'updated address' where emp_name = 'emp2';
+
+delete from empdetails where emp_address = 'updated address';
+
+select * from empdetails;

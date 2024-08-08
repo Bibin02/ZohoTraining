@@ -1,0 +1,8 @@
+Chicken_Biriyani 150 RestaurantX
+Noodles 100 RestaurantX
+Fried_Rice 100 RestaurantX
+Mutton_Biriyani 200 RestaurantX
+Veg_Biriyani 100 RestaurantX
+Idly 10 RestaurantX
+Dosai 20 RestaurantX
+Poori 10 RestaurantX
