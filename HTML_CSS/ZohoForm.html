@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+	<head>
+		<link rel="stylesheet" href="css/zohostyle.css" type="text/css">
+		<title>Software Developer Enrollment Form</title>
+	</head>
+
+	<body>
+		<h1> Zoho Software Developer Registeration Form </h1>
+
+		<form action="thankyou.html" method="get">
+			<table class="table_class">
+				<tr>
+					<td><label for="name"> Candidate Name </label> <div class="important">*<div> </td>
+					<td><input class="small_input" type="text" name="name" required></td>
+				</tr>
+
+				<tr>
+					<td><label for="phone"> Contact Number </label> <div class="important">*<div> </td>
+					<td><input class="small_input" type="tel" name="phone" required></td>
+				</tr>
+				
+				<tr>
+					<td><label for="mail"> Contact Email </label> <div class="important">*<div> </td>
+					<td><input class="small_input" type="email" name="mail" required></td>
+				</tr>
+
+				<tr>
+				<td ><label for="gender"> Gender </label> <div class="important">*<div> </td> <!-- Radio -->
+				<td>
+				<input class="choice_button_input" type="radio" name="gender" value="Male"> Male <br/>
+				<input class="choice_button_input"  type="radio" name="gender" value="Female"> Female <br/>
+				<input class="choice_button_input" type="radio" name="gender" value="T-gender"> Trans-Gender </td>
+				</tr>
+				
+				<tr>
+				<td><label for="age"> Age </label> </td>
+				<td><input class="small_input" type="number" name="age"> </td>
+				</tr>
+				
+				<tr>
+				<td><label for="deg"> Graduation Degree </label> <div class="important">*<div> </td> <!-- DropDown -->
+				<td><select class="selections" name="deg" id="">
+					<option value="null">-Select option-</option>
+					<option value="B.E / B.Tech">B.E / B.Tech</option>
+					<option value="M.E / M.Tech">M.E / M.Tech</option>
+					<option value="M.Sc">M.Sc</option>
+					<option value="B.Sc">B.Sc</option>
+				</select></td>
+				</tr>
+				
+				<tr>
+				<td><label for="clg"> College Name </label> <div class="important">*<div> </td>
+				<td><input class="small_input" type="text" name="clg" required></td>
+				</tr>
+				
+				<tr>
+				<td><label for="exp"> Years of Experience </label> <div class="important">*<div> </td>
+				<td><select class="selections" required name="exp" id="">
+					<option value="null">-Select option-</option>
+					<option value="0">Fresher</option>
+					<option value="3">0 - 3 Years</option>
+					<option value="5">3+ Years</option>
+				</select></td>
+				</tr>
+				
+				<tr>
+				<td><label for="resume"> Upload Resume </label> <div class="important">*<div> </td>
+				<td><input class="selections" type="file" required name="resume"></td>
+				</tr>
+				
+				<tr>
+				<td rowspan="2"><label for="skills"> Skills Known </label> <div class="important">*<div> </td>
+				<td>
+				<input class="choice_button_input"  type="checkbox" value="Java"> Java 
+				<input class="choice_button_input"  type="checkbox" value="Python"> Python <br/>
+				<input class="choice_button_input"  type="checkbox" value="C++"> C++ 
+				<input class="choice_button_input"  type="checkbox" value="Java"> Java 
+				</td>
+				
+				</tr>
+				<tr><td><textarea name="skills" id="" placeholder="Additional Skills"></textarea></td></tr>
+				<tr>
+				<td><label for="about"> About Yourself </label></td>
+				<td><textarea name="about" id="" placeholder="About Yourself"></textarea></td>
+				</tr>
+				
+				<tr>
+				<td><button class="button_input" type="submit" > Submit </button></td>
+				<td><button class="button_input" type="reset" > Reset </button></td>
+				</tr>
+			</table>
+		</form>
+	</body>
+
+</html>
