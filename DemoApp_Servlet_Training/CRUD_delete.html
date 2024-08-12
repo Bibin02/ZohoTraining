@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+	<head>
+		<style>		
+			body{
+				color : black;
+				text-align: left;
+				margin : 5em 5em 5em 5em;
+				font-size : 20px;
+			}
+
+			h1{
+				color : grey;
+				border-bottom : 1px solid red;
+			}
+
+			table{
+				font-family : arial;
+				text-align : left;
+			}
+
+			td{
+				height : 4em;
+				width : 25em;
+			}
+
+			label{
+				font-family : arial;
+				font-size : 20px;
+			}
+
+			.small_input{
+				height : 2em;
+				width : 20em;
+				border : 1px solid grey;
+				border-radius : 5px;
+			}
+
+			.button_input{
+				height : 2em;
+				width : 7em;
+				margin : 1em 1em 1em 3em;
+				border-color : red;
+				background-color : white;
+			}
+
+			.important{
+				display : inline;
+				color : red;
+			}
+
+			.selections{
+				width : 15em;
+				height : 2em;
+				font-size : 15px;
+				text-align : center;
+				border-radius : 5px;
+			}
+
+			.choice_button_input{
+				height : 1.5em;
+				width : 1.5em;
+				color : red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1> Delete Employee Table Elements </h1>
+
+		<form action="crud_op" method="post">
+			<table class="table_class">
+				
+				<tr>
+					<td><label for="column"> Employee Attribute </label> <div class="important">*<div> </td>
+					<td><input class="small_input" type="text" name="column" required></td>
+				</tr>
+				
+				<tr>
+					<td><label for="value"> Value </label> <div class="important">*<div> </td>
+					<td><input class="small_input" type="text" name="value" required></td>
+				</tr>
+				
+				<tr>
+				<td><button class="button_input" type="submit" > Submit </button></td>
+				<td><button class="button_input" type="reset" > Reset </button></td>
+				
+				<tr>
+					<td><input type="hidden" name="op" value="del"></td>
+				</tr>
+				
+				</tr>
+			</table>
+		</form>
+	</body>
+
+</html>

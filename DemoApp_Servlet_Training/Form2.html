@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+	<head>
+		<title>Calculate Percentage Form</title>
+		<style>		
+			body{
+				color : black;
+				text-align: left;
+				margin : 5em 10em 10em 10em;
+				font-size : 20px;
+			}
+
+			h1{
+				color : grey;
+				border-bottom : 1px solid red;
+			}
+
+			table{
+				font-family : arial;
+				text-align : left;
+			}
+
+			td{
+				height : 4em;
+				width : 25em;
+			}
+
+			textarea{
+				width : 20em;
+				height : 7em;
+			}
+
+			label{
+				font-family : arial;
+				font-size : 20px;
+			}
+
+			.small_input{
+				height : 2em;
+				width : 20em;
+				border : 1px solid grey;
+				border-radius : 5px;
+			}
+
+			.button_input{
+				height : 2em;
+				width : 7em;
+				margin : 1em 1em 1em 3em;
+				border-color : red;
+				background-color : white;
+			}
+
+			.important{
+				display : inline;
+				color : red;
+			}
+
+			.selections{
+				width : 15em;
+				height : 2em;
+				font-size : 15px;
+				text-align : center;
+				border-radius : 5px;
+			}
+
+			.choice_button_input{
+				height : 1.5em;
+				width : 1.5em;
+				color : red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1> Student's Marks to Percentage Calculator </h1>
+
+		<form action="calculate_percentage" method="post">
+			<table class="table_class">
+				<tr>
+					<td><label for="name"> Student Name </label> <div class="important">*<div> </td>
+					<td><input class="small_input" type="text" name="name" required></td>
+				</tr>
+
+				<tr>
+					<td><label for="sno"> Seat Number </label> <div class="important">*<div> </td>
+					<td><input class="small_input" type="number" name="sno" required></td>
+				</tr>
+				
+				<tr>
+					<td><label for="class"> Class </label> <div class="important">*<div> </td>
+					<td><input class="small_input" type="text" name="class" required></td>
+				</tr>
+				
+				<tr>
+				<td><label for="marks"> Enter Space Seperated Marks </label> </td>
+				<td><input class="small_input" type="text" name="marks" required> </td>
+				</tr>
+				
+				<tr>
+				<td><button class="button_input" type="submit" > Submit </button></td>
+				<td><button class="button_input" type="reset" > Reset </button></td>
+				</tr>
+			</table>
+		</form>
+	</body>
+
+</html>
