@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+	<head>
+		<title>Enter Education Details</title>
+		<style>		
+			body{
+				color : black;
+				text-align: left;
+				margin : 5em 10em 10em 10em;
+				font-size : 20px;
+			}
+
+			h1{
+				color : grey;
+				border-bottom : 1px solid red;
+			}
+
+			table{
+				font-family : arial;
+				text-align : left;
+			}
+
+			td{
+				height : 4em;
+				width : 25em;
+			}
+
+
+			label{
+				font-family : arial;
+				font-size : 20px;
+			}
+
+			.button_input{
+				height : 2em;
+				width : 7em;
+				margin : 1em 1em 1em 3em;
+				border-color : red;
+				background-color : white;
+			}
+
+			
+		</style>
+	</head>
+
+	<body>
+		<h1> Enter Education Details </h1>
+
+		<form action="T2Q1.jsp" method="get">
+			<table class="table_class">
+				<tr>
+					<td><label for="name"> Name </label> <div class="important">*<div> </td>
+					<td><input class="small_input" type="text" name="name" required></td>
+				</tr>
+
+				<tr>
+					<td><label for="phone"> Contact Number </label> <div class="important">*<div> </td>
+					<td><input class="small_input" type="tel" name="phone" required></td>
+				</tr>
+				
+				<tr>
+				<td><label for="clg"> College Name </label> <div class="important">*<div> </td>
+				<td><input class="small_input" type="text" name="clg" required></td>
+				</tr>
+	
+				<td><label for="oq"> Other Educational Qualifications </label></td>
+				<td><textarea name="oq" id="" placeholder="Other Educational Qualifications"></textarea></td>
+				</tr>
+				
+				<tr>
+				<td><button class="button_input" type="submit" > Submit </button></td>
+				<td><button class="button_input" type="reset" > Reset </button></td>
+				</tr>
+			</table>
+		</form>
+	</body>
+
+</html>
