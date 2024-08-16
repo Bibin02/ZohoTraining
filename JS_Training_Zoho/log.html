@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="log.css">
+    <script src="T1Q1.js"></script>
+    <script src="T1Q2.js"></script>
+    <script src="T2Q1.js"></script>
+    <script src="T2Q2.js"></script>
+    <script src="T3Q1.js"></script>
+    <script src="T3Q2.js"></script>
+    <script src="T3Q3.js"></script>
+    <title>JS Training</title>
+</head>
+<body>
+    <div id="wrapper">
+
+        <div class="box" id="T1Q1">
+            Enter the Radius of the Sphere
+            <input type="text" placeholder="Radius" id="radinp">
+            <input type="button" value="Calculate" onclick="calculate()">
+            <p id="result1">See Log to view Solution. Solution is => </p>
+        </div>
+
+        <div class="box" id="T1Q2">
+            Enter the Name :
+            <input type="text" placeholder="Firstname" id="firstname">
+            <input type="text" placeholder="Lastname" id="lastname">
+            <input type="button" value="Print it !" onclick="getNames()">
+            <p id="result2">See Log to view.</p>
+        </div>
+
+        <div class="box" id="T2Q1">
+            <p id="result3">See Log to view Solution.</p>
+        </div>
+
+        <div class="box" id="T2Q2">
+            <p>Enter the Elements for QuickSort.</p>
+            <input type="text" placeholder="Put space seperated values" id="array">
+            <input type="button" value="Sort" onclick="quickSort()">
+            <p id="result4">See Log to view Solution.</p>
+        </div>
+
+        <div class="box" id="T3Q1">
+            <p>Stop Watch Application.</p>
+            <div id="clock" style="font-size: large;">Clock</div>
+            <input type="button" value="Stop" onclick="stopclock()">
+            <input type="button" value="Start" onclick="startclock()">
+            <input type="button" value="Reset" onclick="resetclock()">
+        </div>
+
+        <div class="box" id="T3Q2">
+            <label for="guess"> Enter the Guess.</label>
+            <input name="guess" type="text" placeholder="Guess" id="guess">
+            <input type="button" value="Guess" onclick="callguess()">
+            <p id="result6">See Log to view Solution.</p>
+        </div>
+
+        <div class="box" id="T3Q3">
+            Enter the CAPTCHA.
+            <p id="cap"></p>
+            <button style="display: block;" onclick="createcaptcha()">Refresh</button>
+            <input type="text" placeholder="captcha" id="inpcap">
+            <input type="button" value="validate" onclick="validatecaptcha()">
+            <p id="result7">See Log to view Solution.</p>
+        </div>
+
+        <div class="box">
+            <button><a href="portfolio.html">Link To PortFolio</a></button>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 21px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+}
+
+/* Style for the wrapper */
+#wrapper {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Style for each box */
+.box {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.box p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Style for input fields and buttons */
+input[type="text"], input[type="button"] {
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+}
+
+input[type="text"] {
+    background: #f9f9f9;
+}
+
+input[type="button"] {
+    background: #070746;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+input[type="button"]:hover {
+    background: #0056b3;
+}
+
+/* Style for links inside buttons */
+button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Style for the stopwatch clock */
+#clock {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Style for buttons in the last box */
+#T3Q3 button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+#T3Q3 button:hover {
+    background: #218838;
+}
+
+#T3Q3 input[type="text"] {
+    margin-top: 10px;
+}
+
+/* Style for the link to portfolio */
+.box button {
+    background: #6c757d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.box button:hover {
+    background: #5a6268;
+}
