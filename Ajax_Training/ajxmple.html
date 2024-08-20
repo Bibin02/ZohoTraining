@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Example</title>
+</head>
+<body>
+    <button onclick="loaddate()">Print Date</button>
+    <div id="dateblock"></div>
+    <script>
+        var request = new XMLHttpRequest(); // For Normal Browsers
+        function loaddate() {
+            try {
+                if (window.ActiveXObject) {  // For Internet Explorer
+                    request = new ActiveXObject("Microsoft.XMLHTTP")
+                }
+
+                request.onreadystatechange = printDate
+
+                request.open("GET", "date.jsp", true)
+
+                request.send()
+
+            } catch (error) {
+                alert("Unable to connect Server")
+            }
+        }
+
+        function printDate() {
+            if (request.readyState == 4){
+                let date = request.responseText
+                document.getElementById("dateblock").innerHTML = date
+            }
+        }
+    </script>
+</body>
+</html>

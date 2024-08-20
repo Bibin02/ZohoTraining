@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async and Await</title>
+</head>
+<body>
+	<p>Wait for 2 seconds to Book.</p>
+    <button onclick="tatkalbook()">Book Tatkal Ticket</button>
+    <div id="textbox">Displayable Text</div>
+
+    <script>
+
+		function customerBooking(){
+			let choice = Math.round(Math.random())
+			return new Promise((resolve, reject) =>{
+				if (choice == 1) {
+					setTimeout(resolve,2000,"Booking Sucessful")
+				}
+				else{
+					setTimeout(resolve,2000,"Booking Unsucessful")
+				}
+			})
+		}
+		
+		// tatkal Ticket Booking using Async and Await.
+		async function tatkalbook() {
+			let result
+			try {
+				result = await customerBooking()
+				document.getElementById("textbox").innerHTML = result
+				console.log(result)
+
+			} catch (error) {
+				document.getElementById("textbox").innerHTML = error
+				console.log(error)
+			}
+		}
+
+    </script>
+</body>
+</html>

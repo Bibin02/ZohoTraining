@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET POST Using Ajax</title>
+</head>
+<body>
+    <div id="wrapper">
+        Addition Using Ajax GET method. <br>
+        Enter Num 1 : <input type="text" id="num1"><br>
+        Enter Num 2 : <input type="text" id="num2"><br>
+        <p id="addition"></p><br>
+        <button onclick="add()">Add</button><br>
+
+        Password Validation Using Ajax POST method. <br>
+        Enter Password : <input type="password" id="pass"><br>
+        <p id="validation"></p><br>
+        <button onclick="validate()">Validate</button>
+    </div>
+
+    <script>
+
+        var xhhtp = new XMLHttpRequest();
+
+        function add() {
+            
+            xhhtp.onreadystatechange = () => {
+                if (xhhtp.readyState == 4 && xhhtp.status == 200) {
+                    document.getElementById("addition").innerHTML = xhhtp.responseText
+                    console.log(xhhtp.responseText)
+                }
+            }
+
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+            let url = `T3Q1add.jsp?num1=${num1}&num2=${num2}`;
+
+            xhhtp.open("GET", url, true)
+            xhhtp.send()
+        }
+
+        function validate() {
+            
+            xhhtp.onreadystatechange = () => {
+                if (xhhtp.readyState == 4 && xhhtp.status == 200) {
+                    document.getElementById("validation").innerHTML = xhhtp.responseText
+                    console.log(xhhtp.responseText)
+                }
+            }
+
+            xhhtp.open("POST", "T3Q1validation.jsp", true)
+            xhhtp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhhtp.send(`password=${document.getElementById("pass").value}`)
+        }        
+    </script>
+</body>
+</html>

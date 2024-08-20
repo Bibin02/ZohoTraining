@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>load() in Ajax</title>
+</head>
+<body>
+    <button onclick="displayExt()">Display Loaded Page</button>
+    <div id="content-area"></div>
+
+    <script>
+        var xhhtp = new XMLHttpRequest();
+        function getExt() {
+            return new Promise((resolve, reject) => {
+                if (xhhtp.readyState == 4 && xhhtp.status == 200) {
+                    resolve(xhhtp.responseText)
+                }
+                if (xhhtp.readyState == 4 && xhhtp.status != 200) {
+                    reject('Error Occured, Server Status :' + xhhtp.status)
+                }
+
+                xhhtp.open("GET", "sample.txt", true)
+                xhhtp.send()
+            })
+        }
+
+        function displayExt() {
+            getExt().then((page) => {
+                document.getElementById("content-area").innerHTML = page
+            })
+            .catch((errmsg) => {
+                console.log(errmsg)
+            })
+        }
+    </script>
+</body>
+</html>

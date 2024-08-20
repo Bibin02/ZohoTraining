@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display XML data in an HTML table by using HTML tags</title>
+</head>
+<body>
+    <button onclick="displayTable()">Display Table</button>
+    <div id="table-area"></div>
+
+    <script>
+        var xhttp = new XMLHttpRequest();
+
+        function getTable() {
+            return new Promise((resolve, reject) =>{
+
+                xhttp.onreadystatechange = () => {
+                    if (xhttp.readyState == 4 && xhttp.status == 200) {
+                        let content = xhttp.responseXML
+                        resolve(content)
+                    }
+                    else if (xhttp.readyState == 4 && xhttp.status != 200) {
+                        // Reject if error occurs in fetching data.
+                        reject("Can't Fetch Data.")
+                    }
+                }
+
+                // XML Source W3Schools
+                xhttp.open("GET", "cd_catalog.xml")
+                xhttp.send()
+            })
+            
+        }
+
+        async function displayTable() {
+            try {
+                let xmldata = await getTable()
+                tabify(xmldata)
+                
+            } catch (error) {
+                document.getElementById("table-area").innerHTML = error
+                console.log(error)
+            }
+        }
+
+        function tabify(xmldata) {
+
+            var table="<table border=\"1\"> <tr><th> Artist </th><th> Title </th></tr>";
+            var x = xmldata.getElementsByTagName("CD");
+            for (i = 0; i <x.length; i++) { 
+                table += "<tr><td>" + x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue + "</td><td>" + x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue + "</td></tr>";
+            }
+            document.getElementById("table-area").innerHTML = table + "</table>";
+            // console.log(xmldata)
+        }
+        
+    </script>
+</body>
+</html>

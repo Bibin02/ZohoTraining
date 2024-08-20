@@ -1,0 +1,16 @@
+<p>
+C:\Users\BIBIN\Documents\programming code files\Java codes\Servlet Training Zoho\Ajax>jar -cvf Ajax.war *
+added manifest
+adding: ajxmple.html(in = 1088) (out= 519)(deflated 52%)
+adding: date.jsp(in = 86) (out= 83)(deflated 3%)
+adding: index.css(in = 1366) (out= 523)(deflated 61%)
+adding: index.html(in = 2374) (out= 819)(deflated 65%)
+adding: sample.txt(in = 0) (out= 0)(stored 0%)
+adding: T1Q1.html(in = 810) (out= 418)(deflated 48%)
+adding: T1Q1.jsp(in = 401) (out= 255)(deflated 36%)
+adding: WEB-INF/(in = 0) (out= 0)(stored 0%)
+adding: WEB-INF/classes/(in = 0) (out= 0)(stored 0%)
+adding: WEB-INF/lib/(in = 0) (out= 0)(stored 0%)
+
+C:\Users\BIBIN\Documents\programming code files\Java codes\Servlet Training Zoho\Ajax>
+</p>

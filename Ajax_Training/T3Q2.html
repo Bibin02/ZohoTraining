@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User authentication system using Ajax</title>
+</head>
+<body>
+    Enter User Credentials. <br>
+    Enter UserID : <input type="text" id="uname"><br>
+    Enter Password : <input type="password" id="pass"><br>
+    <p id="message"></p><br>
+    <button onclick="authenticate()">Authenticate</button>
+
+    <script>
+
+        var xht = new XMLHttpRequest();
+
+        function userpromise() {
+            return new Promise((resolve,reject) => {
+                
+                xht.onreadystatechange = () => {
+                    if (xht.readyState == 4 && xht.status == 200) {
+                        resolve(xht.responseText)
+                    } 
+                    if (xht.readyState == 4 && xht.status != 200){
+                        reject("Response not Received from Server.")
+                    }
+                }
+                
+                
+                xht.open("POST", "validateuser.jsp", true)
+                xht.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+
+                let u = document.getElementById("uname").value;
+                let p = document.getElementById("pass").value;
+                let queryStr = `username=${u}&password=${p}`;
+
+                xht.send(queryStr)
+            })
+        }
+
+        async function authenticate() {
+            try {
+                let response = await userpromise()
+                document.getElementById("message").innerHTML = response
+                console.log(response)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+    </script>
+
+</body>
+</html>

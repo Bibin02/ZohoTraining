@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Sample.txt file</title>
+</head>
+<body>
+    <button onclick="displaytextfromfile()">Print Content</button>
+    <div id="textbox">Displayable Text</div>
+
+    <script>
+        var req = new XMLHttpRequest()
+
+        function displaytextfromfile() {
+
+            req.onreadystatechange = gettext
+
+            req.open("GET", "T1Q1.jsp", true)
+
+            req.send()
+
+
+        }
+
+        function gettext(){
+            if (req.readyState == 4) {
+                let context = req.responseText
+
+                document.getElementById("textbox").innerHTML = context
+            }
+        }
+
+    </script>
+</body>
+</html>
