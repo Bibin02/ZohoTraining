@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <title>T3Q1</title>
+</head>
+<body>
+
+    <p>Enter Values to Enable Submit Button</p>
+    
+    Enter your Name : <input type="text" name="uname" id="name"><br>
+    Enter your Email : <input type="text" name="emails" id="mail"><br>
+    <button id="check">Check</button><br>
+    <button id="submit">Submit</button><br>
+
+    <div></div>
+
+    <script>
+        $().ready( function(){
+            $('#submit').fadeOut()
+
+            $('#check').click( () => {
+                let condition = ($('#name').val() != "" && $('#mail').val() != "")
+                if (condition) {
+                    $('#submit').fadeIn()
+                }
+                else{
+                    $('div').text("Kindly Fill the Form.")
+                }
+            })
+
+            $('#submit').click( ()=> {
+                $('div').text("Form Submitted Sucessfully")
+            })
+        })
+    </script>
+</body>
+</html>

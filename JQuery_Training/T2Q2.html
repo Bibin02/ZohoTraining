@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <title>T2Q3</title>
+</head>
+<body>
+    Enter Text : <input id="textbox" type="text">
+    <button>Get Text</button>
+    <div id="displaybox">Entered Text will display Here.</div>
+
+    <script>
+        $().ready( function(){
+            $('button').click( ()=>{
+                let context = $('#textbox').val()
+                $('#displaybox').html(context)
+            })
+        })
+    </script>
+</body>
+</html>

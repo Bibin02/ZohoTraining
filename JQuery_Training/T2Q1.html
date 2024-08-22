@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .table1, tr, td, th{
+            border: 1px solid black;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <title>T2Q1</title>
+</head>
+<body>
+
+    <table class="table1">
+        <tbody>
+            <tr>
+                <th>S.no</th>
+                <th>Names</th>
+                <th>Marks</th>
+            </tr>
+
+            <tr>
+                <td>1.</td>
+                <td>Abi</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>Bob</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>Cadlic</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>Dony</td>
+                <td>100</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button>Delete Rows</button>
+    <div id="content"></div>
+
+    <script>
+        $().ready( function(){
+            $('button').click( ()=>{
+                $('tr:gt(1)').fadeOut(2000)
+            })
+        })
+    </script>
+</body>
+</html>

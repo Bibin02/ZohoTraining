@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Training</title>
+    <!-- JQuery import for internet -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <style>
+        #box1{
+            background-color: darkgreen;
+            height: 200px;
+            width: 200px;
+            margin-right: 10px;
+            float: left;
+        }
+
+        #box2{
+            background-color: indigo;
+            height: 200px;
+            width: 200px;
+            margin-right: 10px;
+            /* comment below code to see the magic */
+            float: left;
+        }
+
+        .colorflip{
+            background-color : magenta;
+        }
+
+    </style>
+</head>
+<body>
+    <h2 class="heading2">Hello Everyone Click me !</h2>
+    <p class="paragraph" style="color: black;">I'm Welcoming you all <br>
+        Lorem ipsum dolor sit amet consectetur, 
+        adipisicing elit. Minus, neque veniam eos, 
+        facilis ab quas quae pariatur odit, ipsum 
+        corporis cupiditate sapiente qui assumenda 
+        soluta repudiandae repellat nisi eum consequuntur!
+    </p>
+    <div id="box1"></div><div id="box2"></div>
+    
+
+    <button class="b1">Box 1</button>
+
+    <table class="table1">
+        <tbody>
+            <tr>
+                <th>S.no</th>
+                <th>Names</th>
+                <th>Marks</th>
+            </tr>
+
+            <tr>
+                <td>1.</td>
+                <td>Abi</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>Bob</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>Cadlic</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>Dony</td>
+                <td>100</td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br><br><br>
+    <div class="window-size"></div>
+    <script>
+        // $(document).ready(function() {
+        //     $('p').css("background-color", "cyan")
+        // })
+
+        // Everything should be in document.ready anonymous function / Arrow fn.
+        $().ready(() => {
+            // CSS
+            $('.paragraph').css("background-color", "cyan")
+            $('.table1, th, td,tr').css("border", "1px solid black");
+            $('.window-size').css({"background-color" : "yellow", "color" : "black", "height" : "100px", "width" : "100px"})
+
+            // fadeToggle for Green box
+            $('.b1').click( () => {
+                $('#box1').fadeToggle(1000)
+            })
+
+            // paragraph slide toggle by clicking h2 tag.
+            // Before that we slide up.
+            $('.paragraph').slideUp(1)
+            // click event
+            $('.heading2').click( () => {
+                $('.paragraph').slideToggle(1000)
+            })
+            // Hover event
+            $('#box2').hover( () => {
+                // document.getElementById("box1").innerHTML = "<div style=\"color: white;\">Found Easter Egg </div>"
+                $('#box1').html("<div style=\"color: white;\">Found Easter Egg </div>")
+            })
+            $('#box1').hover( () => {
+                document.getElementById("box1").innerHTML = "<div style=\"color: white;\">You Can't Touch Me </div>"
+            })
+
+            // Add Classes using JQuery
+            $('.table1 tr:odd').addClass("oddrow")
+            $('.oddrow').css("background-color" , "gray")
+
+            // Method Binding
+            // .bind("eventname", javascript_function_name / annonymus_fn)
+            $('.paragraph')
+            .bind("mouseover", () => {
+                $('#box2').html("<div style=\"color: white;\">Now you're viewing the Paragraph</div>")
+            })
+            .bind("click", () => {
+                $('#box2').html("<div style=\"color: yellow;\">Now you've clicked the Paragraph</div>")
+            })
+            
+            // Unbinding a Binded method.
+            // .unbind("eventname", javascript_function_name)
+
+            // Window functions in JQuery
+            $(window).resize( () => {
+                let height = $(window).height()
+                let width = $(window).width()
+
+                $('.window-size').html("Height => "+height+"  ;  Width => "+width)
+            })
+
+            // ToggleClass
+            // To use this keyword we need to use anonymous fns not arrow fns.
+            $('td').click( function () {
+                $(this).toggleClass('colorflip')
+            })
+        })
+        
+    </script>
+</body>
+</html>

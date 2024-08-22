@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            font-size: 24px;
+            margin: 4px 4px 4px 4px ;
+        }
+        button:hover{
+            background-color: aquamarine;
+        }
+        .calculator-box{
+            border: 2px solid cadetblue;
+            width: 10em;
+            margin: 1em 1em 1em 1em ;
+        }
+        .clear{
+            background-color: yellow;
+            height: 2em;
+            width: 2em;
+        }
+        .numbers{
+            background-color: aliceblue;
+            height: 2em;
+            width: 2em;
+        }
+
+        #clear{
+            background-color: red;
+            height: 2em;
+            width: 3em;
+        }
+        #eval{
+            background-color: greenyellow;
+            height: 2em;
+            width: 3em;
+        }
+        .statement-field{
+            background-color: white;
+            border: 2px solid black;
+            height: 2em;
+            width: 9em;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.0.0/math.min.js"></script>
+    <title>T3Q2</title>
+</head>
+<body>
+    <div class="calculator-box">
+        <h4>Calculator</h4>
+        <div id="statement" class="statement-field"></div>
+
+        <button id="1" class="numbers">1</button>
+        <button id="2" class="numbers">2</button>
+        <button id="3" class="numbers">3</button>
+        <button id="4" class="numbers">4</button>
+        <button id="5" class="numbers">5</button>
+        <button id="6" class="numbers">6</button>
+        <button id="7" class="numbers">7</button>
+        <button id="8" class="numbers">8</button>
+        <button id="9" class="numbers">9</button>
+        <button id="0" class="numbers">0</button>
+
+        <button id="add" class="clear">+</button>
+        <button id="sub" class="clear">-</button>
+        <button id="mul" class="clear">*</button>
+        <button id="div" class="clear">/</button>
+        <button id="mod" class="clear">%</button>
+        <button id="clear" class="clear">Clear</button>
+        <button id="eval" class="clear" onclick="eval()">Ans</button>
+    </div>
+
+    <script>
+        $().ready( function(){
+            $('button').click( function(){
+                if ($(this).text() !== "Ans") {
+                    $('.statement-field').text($('.statement-field').text()+$(this).text())
+                }
+            })
+
+            $('#clear').click( function(){
+                $('.statement-field').text("")
+            })
+        })
+
+        function eval() {
+            let expression_tag = document.getElementById("statement")
+            let expression = expression_tag.innerHTML
+            expression_tag.innerHTML = solution(expression)
+        }
+        function solution(expression){
+            try {
+                return math.evaluate(expression)
+            } catch (error) {
+                return "Invalid Expression"
+            }
+        }
+    </script>
+</body>
+</html>

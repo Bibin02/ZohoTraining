@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>T1Q3</title>
+</head>
+<body>
+    <button>Display Text</button>
+    <div id="content"></div>
+
+    <script>
+        // var proxy = 'https://cors-anywhere.herokuapp.com/';
+        // $().ready( function(){
+        //     $('button').click( ()=>{
+        //         $.ajax({
+        //             url: proxy+"ajaxdemo.html",
+        //             type: "GET",
+        //             success : (data) => {
+        //                 $('#content').html(data)
+        //             }
+                    
+        //         })
+        //     })
+        // })
+
+        var xhr = new XMLHttpRequest()
+
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                $('#content').html(xhr.responseText)
+            }
+            else if (xhr.readyState == 4 && xhr.status != 200){
+                $('#content').html("Error due to "+xhr.status)
+            }
+        }
+
+        xhr.open("GET", "ajaxdemo.html", true)
+        xhr.send()
+
+    </script>
+</body>
+</html>
