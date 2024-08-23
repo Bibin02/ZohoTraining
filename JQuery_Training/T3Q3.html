@@ -1,17 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        #jokehead{
+            border: 2px solid grey;
+            font: optional;
+            background-color: aliceblue;
+            width: 15em;
+        }
+        button{
+            background-color: chocolate;
+            color: whitesmoke;
+            font: optional;
+            position: relative;
+            left: 75px;
+        }
+    </style>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <title>T3Q3</title>
 </head>
 <body>
-    <button>Display Text</button>
-    <div id="content"></div>
+
+    <div id="jokehead"></div>
+    <button>Generate Joke</button>
 
     <script>
         $().ready( function(){
-            
+            $('button').click( ()=>{
+                ajaxreqjoke()
+            })
         })
+
+        function ajaxreqjoke() {
+            $.ajax({
+                url: "https://sv443.net/jokeapi/v2/joke/Any",
+                type: "GET",
+                dataType: "json",
+                success: (msg)=>{
+                    let jokes
+                    if (msg.type === "twopart") {
+                        jokes = msg.setup + "<br>" + msg.delivery 
+                        $('#jokehead').html(jokes)
+                        // console.log(jokes)
+                    } 
+                    else{
+                        $('#jokehead').html(jokes)
+                        // console.log(jokes)
+                    }
+                },
+                error: (jqXHR, textStatus, errorThrown)=>{
+                    console.log(errorThrown)
+                }
+            })
+        }
     </script>
 </body>
 </html>

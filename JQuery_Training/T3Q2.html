@@ -6,12 +6,21 @@
             font-size: 24px;
             margin: 4px 4px 4px 4px ;
         }
+        button{
+            border: 0.5px solid black;
+            margin: 10px;
+            border-radius: 5px;
+        }
         button:hover{
             background-color: aquamarine;
         }
         .calculator-box{
-            border: 2px solid cadetblue;
-            width: 10em;
+            border: 10px solid cadetblue;
+            position: relative;
+            top : 2em;
+            left: 24em;
+            border-radius: 15px;
+            width: 13em;
             margin: 1em 1em 1em 1em ;
         }
         .clear{
@@ -37,9 +46,11 @@
         }
         .statement-field{
             background-color: white;
+            border-radius: 5px;
+            margin: 10px;
             border: 2px solid black;
             height: 2em;
-            width: 9em;
+            width: 11em;
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
@@ -48,7 +59,7 @@
 </head>
 <body>
     <div class="calculator-box">
-        <h4>Calculator</h4>
+        <h4 style="text-align: center;">Calculator</h4>
         <div id="statement" class="statement-field"></div>
 
         <button id="1" class="numbers">1</button>

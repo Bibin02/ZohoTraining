@@ -10,32 +10,33 @@
 
     <script>
         // var proxy = 'https://cors-anywhere.herokuapp.com/';
-        // $().ready( function(){
-        //     $('button').click( ()=>{
-        //         $.ajax({
-        //             url: proxy+"ajaxdemo.html",
-        //             type: "GET",
-        //             success : (data) => {
-        //                 $('#content').html(data)
-        //             }
+
+        $().ready( function(){
+            $('button').click( ()=>{
+                $.ajax({
+                    url: "ajaxdemo.html",
+                    type: "GET",
+                    success : (data) => {
+                        $('#content').html(data)
+                    }
                     
-        //         })
-        //     })
-        // })
+                })
+            })
+        })
 
-        var xhr = new XMLHttpRequest()
+        // var xhr = new XMLHttpRequest()
 
-        xhr.onreadystatechange = () => {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                $('#content').html(xhr.responseText)
-            }
-            else if (xhr.readyState == 4 && xhr.status != 200){
-                $('#content').html("Error due to "+xhr.status)
-            }
-        }
+        // xhr.onreadystatechange = () => {
+        //     if (xhr.readyState == 4 && xhr.status == 200) {
+        //         $('#content').html(xhr.responseText)
+        //     }
+        //     else if (xhr.readyState == 4 && xhr.status != 200){
+        //         $('#content').html("Error due to "+xhr.status)
+        //     }
+        // }
 
-        xhr.open("GET", "ajaxdemo.html", true)
-        xhr.send()
+        // xhr.open("GET", "ajaxdemo.html", true)
+        // xhr.send()
 
     </script>
 </body>
