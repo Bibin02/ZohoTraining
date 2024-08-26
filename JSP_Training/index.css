@@ -1,0 +1,87 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif, monospace;
+    line-height: 1.6;
+    color: black;
+    background-color: whitesmoke;
+    padding: 30px;
+}
+
+/* Wrapper styling */
+#wrapper {
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+    background-color: honeydew;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    color: grey;
+}
+
+/* Paragraph styling */
+p {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: grey;
+    padding-left: 300px;
+}
+
+/* List styling */
+ol {
+    margin: 20px;
+    padding-left: 20px;
+    font-size: larger;
+}
+
+li {
+    padding: 10px;
+    width: 45em;
+    font-size: medium;
+}
+
+/* Button styling */
+button {
+    background-color: #4a2a76;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    float: right;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: aquamarine;
+    color: black;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    #wrapper {
+        padding: 10px;
+    }
+
+    button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

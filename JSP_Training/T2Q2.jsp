@@ -6,27 +6,32 @@
 	</head>
 	
 	<body>
-	Enter Number of Lines Value in Command line.
+	<form action="T2Q2.jsp">
+		<label for="n" >Enter Number of Lines Value.
+			<input name="n" type="text" placeholder="Rows">
+		</label>
 	
 	<% 
 		out.println("<br/>");
-		int n = 5;
 		
-		int k = 1;
-		for (int i=(2*n)-1; i>0; i--){
-			for (int j=i; j>0; j--){
-				out.print(k);
-			}
-			if (i<=n){
-				k--;
-			}
-			else{
-				k++;
-			}
+		if(request.getParameter("n") != null){
+			int n = Integer.parseInt(request.getParameter("n"));
 			
-			out.println("<br/>");
+			int k = 1;
+			for (int i=(2*n)-1; i>0; i--){
+				for (int j=i; j>0; j--){
+					out.print(k);
+				}
+				if (i<=n){
+					k--;
+				}
+				else{
+					k++;
+				}
+				
+				out.println("<br/>");
+			}
 		}
-		
 	%>
 	
 	</body>
