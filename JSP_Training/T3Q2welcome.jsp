@@ -2,7 +2,26 @@
 <html lang="en">
 <head>
     <style>
-
+        *{
+            margin : 1em;
+        }
+        button{
+            background-color: antiquewhite;
+            font-size: 1.2em;
+        }
+        button:hover{
+            background-color: aquamarine;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        #wrapper{
+            border-radius: 5px;
+            border: 2px dotted red;
+            padding: 1em;
+            width: fit-content;
+        }
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
