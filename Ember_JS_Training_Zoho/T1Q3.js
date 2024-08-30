@@ -54,6 +54,53 @@ Change the next book to be read property to be the first unread book you find in
 
 */
 
-export function function3(){
+class Book{
+	constructor(title, genre){
+		this._title = title
+		this._genre = genre
+		this._read  = false
+		this._date  = null
+	}
+	
+	set read(bool){
+		this._read = bool
+	}
+	
+	set date(date){
+		this._date = date
+	}
+	
+	get date(){
+		return this._date;
+	}
+	get read(){
+		return this._read;
+	}
+}
+
+class BookList{
+	
+	constructor(){
+		this._next = null
+		this._curr  = null
+		this._prev  = null
+		this._bookarr  = []
+		this._totalbooks  = this._bookarr.length
+		this._readCount = 0
+	}
+	
+	addBook(Book){
+		this._bookarr = [...this._bookarr, Book]
+		this._totalbooks += 1;
+	}
+	
+	finishCurrentBook(){
+		
+	}
+	
+	
+	
+}
+function function3(){
 	console.log("From Function 3")
 }
