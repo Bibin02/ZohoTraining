@@ -76,31 +76,77 @@ class Book{
 	get read(){
 		return this._read;
 	}
+	get title(){
+		return this._title;
+	}
+	get genre(){
+		return this._genre;
+	}
 }
+
+let msgbox2 = document.getElementById("t3-log")
 
 class BookList{
 	
 	constructor(){
-		this._next = null
-		this._curr  = null
-		this._prev  = null
+		this._next = 1
+		this._curr  = 0
+		this._prev  = -1
 		this._bookarr  = []
-		this._totalbooks  = this._bookarr.length
+		this._totalbooks  = 0
 		this._readCount = 0
 	}
 	
 	addBook(Book){
-		this._bookarr = [...this._bookarr, Book]
+		msgbox2.innerHTML = ""
+		Book._date = new Date()
+		this._bookarr.push(Book)
 		this._totalbooks += 1;
+		msgbox2.innerHTML = "Book "+Book.title+" Added Successfully"
 	}
 	
 	finishCurrentBook(){
-		
+		msgbox2.innerHTML = ""
+		if(this._next <= this._totalbooks){
+			let currentBook = this._bookarr[this._curr];
+            currentBook.read = true;
+            currentBook.date = new Date();
+			msgbox2.innerHTML = `Successfully Read (Book Name): ${currentBook.title}`
+			this._prev += 1
+			this._curr += 1
+			this._next += 1
+		}
+		else{
+			msgbox2.innerHTML = "Completed All Books"
+		}
 	}
-	
-	
-	
+
+	displayBooks(){
+		msgbox2.innerHTML = "<ul>"
+		for (let index = 0; index < this._totalbooks; index++) {
+			msgbox2.innerHTML += "<li>"+" Book Name : "+this._bookarr[index].title+" Book Genre : "+
+				this._bookarr[index].genre+" Read Status : "+((index <= this._prev) ? "True" : "False")+"</li>"
+		}
+		msgbox2.innerHTML += "</ul>"
+	}
+
+	displayReadBooks(){
+		msgbox2.innerHTML = "<ul>"
+		for (let index = 0; index <= this._prev; index++) {
+			msgbox2.innerHTML += "<li>"+" Book Name : "+this._bookarr[index].title+" Book Genre :"+this._bookarr[index].genre+ "</li>"
+		}
+		msgbox2.innerHTML += "</ul>"
+	}
 }
-function function3(){
-	console.log("From Function 3")
-}
+
+var booklist = new BookList();
+
+document.getElementById("t3-f1").addEventListener("click", ()=>{
+	let bkname = prompt("Enter Book Name: ")
+	let bkgenre = prompt("Enter Book Genre: ")
+	booklist.addBook(new Book(bkname, bkgenre))
+})
+
+document.getElementById("t3-f2").addEventListener("click", ()=>booklist.displayBooks())
+document.getElementById("t3-f3").addEventListener("click", ()=>booklist.displayReadBooks())
+document.getElementById("t3-f4").addEventListener("click", ()=>booklist.finishCurrentBook())

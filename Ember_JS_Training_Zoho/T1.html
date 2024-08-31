@@ -4,26 +4,56 @@
 <title>JS OOPS Tasks</title>
 
 <style>
+	*{
+		position: relative;
+		justify-content: center;
+	}
 	div{
-		padding: 2em;
+		margin: 1em;
+		padding: 1em;
 		border: 3px solid gray;
 		border-radius: 25px;
+		position: relative;
+		float: left;
 	}
 	button{
+		border:2px solid black;
 		background-color: aliceblue;
 		border-radius: 15px;
 		padding: 1em;
 		margin: 1.25em;
 		font-size: 1em;
 	}
+	button:hover{
+		border:2px solid red;
+		background-color: cornsilk;
+		cursor: pointer;
+	}
 	#pow-container{
-		height : 500px;
-		width: 300px;
+		height : 40em;
+		width: 20em;
 		border: 3px solid greenyellow;
 		
 	}
 	#message-box{
+		width: 12em;
 		font-size: 1.2em;
+		text-align: center;
+	}
+	#t3-log{
+		position: relative;
+		width: 25em;
+		font-size: 1.2em;
+		text-align: center;
+	}
+	#Task3{
+		width: 550px;
+	}
+	.h4{
+		padding: 0%;
+		margin: 0%;
+		font-size: larger;
+		text-align: center;
 	}
 </style>
 
@@ -32,14 +62,33 @@
 <body>
 
 <div>
-	<button onclick="function1()" >Trigger Task 1</button>
-	<div id="pow-container"><div id="message-box"> MESSAGE </div><img src="./pow.png" alt="POW"/>
-		<button onclick="function2feed()" >Feed</button>
-		<button onclick="function2play()" >Play</button>
-		<button onclick="function2sleep()" >Sleep</button>
-		<button onclick="function2cst()" >Status</button>
+	<div>
+		<h4 class="h4">Task 1</h4>
+		<button onclick="function1()" >Trigger Task 1</button>
 	</div>
-	<button onclick="function3()" >Trigger Task 3</button>
+	
+	<div id="Task3">
+		<h4 class="h4">Task 3</h4>
+		<div id="t3-log">See Your Log Messages</div>
+		<button id="t3-f1">Add Book</button>
+		<button id="t3-f2">Display My Books</button>
+		<button id="t3-f3">Display My Read Books</button>
+		<button id="t3-f4">Finish Current Book</button>
+	</div>
+
+	<div id="pow-container">
+		<h4 class="h4">Task 2</h4>
+		<div id="message-box"> MESSAGE </div>
+		<img src="./pow.png" alt="POW" style="height: 15em; width: 15em;"/>
+		<div class="buttons-pow">
+			<button onclick="function2feed()" >Feed</button>
+			<button onclick="function2play()" >Play</button>
+			<button onclick="function2sleep()" >Sleep</button>
+			<button onclick="function2cst()" >Status</button>
+		</div>
+		
+	</div>
+
 	<!-- ignored due to CORS error -->
 	<!-- <script type="module" src="./main.js"></script> -->
 	
