@@ -1,0 +1,52 @@
+
+input {
+  padding: 0.2em;
+  margin: 10px;
+}
+
+input:focus {
+  border: 2px solid black;
+}
+
+button {
+  background-color: lime;
+  color: black;
+  text-decoration: bold;
+  padding: 0.2em;
+  margin: 10px;
+  position: relative;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: aqua;
+  border: 2px solid red;
+  color: black;
+  text-decoration: bold;
+  cursor: pointer;
+}
+
+button:focus {
+  background-color: aqua;
+  border: 2px solid red;
+  color: black;
+  text-decoration: bold;
+  cursor: pointer;
+}
+
+div {
+  margin: 20px;
+}
+
+.bmi-box {
+  border: 2px solid grey;
+  border-radius: 5px;
+  align-items: center;
+  width: 25em;
+  padding: 1.2em;
+  position: relative;
+  left: 15em;
+}
+
+.bmi-result-box {
+}

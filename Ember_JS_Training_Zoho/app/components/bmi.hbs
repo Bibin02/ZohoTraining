@@ -1,0 +1,20 @@
+{{page-title "BMI Calculator"}}
+
+<h1> BMI Calculator </h1>
+
+<div class="bmi-box">
+	Please Enter Your Weight : 
+	<input id="weight" type="number" {{on "input" this.updateWeight }} placeholder="Kg"><br/>
+	Please Enter Your Height : 
+	<input id="height" type="number" {{on "input" this.updateHeight }} placeholder="cm"><br/>
+	
+	<button id="calculate-bmi-button" type="button" {{on "click" this.calculateBmi }}>
+		Calculate
+	</button> <br/>
+	
+	<div class="bmi-result-box">
+		BMI = {{this.bmi}} Kg/m<sup>2</sup>
+	</div>
+</div>
+
+{{yield}}
