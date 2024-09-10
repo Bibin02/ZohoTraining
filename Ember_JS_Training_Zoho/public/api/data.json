@@ -1,0 +1,84 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Sunset Valley",
+            "src": "../assets/images/1.jpg",
+            "desc": "A breathtaking view of the sunset.",
+            "likes": 230,
+            "comments": 45
+        },
+        {
+            "id": 2,
+            "name": "Mountain Peak",
+            "src": "../assets/images/2.jpg",
+            "desc": "The highest point in the region, perfect for hiking.",
+            "likes": 180,
+            "comments": 32
+        },
+        {
+            "id": 3,
+            "name": "Ocean Breeze",
+            "src": "../assets/images/3.jpg",
+            "desc": "Feel the fresh ocean air at this scenic beach.",
+            "likes": 275,
+            "comments": 50
+        },
+        {
+            "id": 4,
+            "name": "City Lights",
+            "src": "../assets/images/4.jpg",
+            "desc": "A vibrant city that never sleeps.",
+            "likes": 210,
+            "comments": 60
+        },
+        {
+            "id": 5,
+            "name": "Forest Trail",
+            "src": "../assets/images/5.jpg",
+            "desc": "A quiet path through dense forest.",
+            "likes": 165,
+            "comments": 27
+        },
+        {
+            "id": 6,
+            "name": "Desert Oasis",
+            "src": "../assets/images/6.jpg",
+            "desc": "An unexpected oasis in the middle of the desert.",
+            "likes": 220,
+            "comments": 38
+        },
+        {
+            "id": 7,
+            "name": "Snowy Hills",
+            "src": "../assets/images/7.jpg",
+            "desc": "A serene view of snow-covered hills.",
+            "likes": 195,
+            "comments": 29
+        },
+        {
+            "id": 8,
+            "name": "River Bend",
+            "src": "../assets/images/8.jpg",
+            "desc": "A gentle river flowing through the countryside.",
+            "likes": 250,
+            "comments": 42
+        },
+        {
+            "id": 9,
+            "name": "Lush Garden",
+            "src": "../assets/images/9.jpg",
+            "desc": "A beautiful garden full of vibrant flowers.",
+            "likes": 215,
+            "comments": 34
+        },
+        {
+            "id": 10,
+            "name": "Night Sky",
+            "src": "../assets/images/10.jpg",
+            "desc": "A starlit night with a clear view of the Milky Way.",
+            "likes": 290,
+            "comments": 55
+        }
+    ]
+}
