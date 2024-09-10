@@ -5,10 +5,23 @@
 
 
 <h2> Welcome To Ember App</h2>
-<LinkTo @route="home" class="link-buttons">Home</LinkTo>
-<LinkTo @route="BMI" class="link-buttons">BMI Calculator</LinkTo>
-<LinkTo @route="book-ticket" class="link-buttons">Railway Reservation</LinkTo>
-<LinkTo @route="registration" class="link-buttons">Student Form</LinkTo>
-<LinkTo @route="social-media" class="link-buttons">Social Media</LinkTo>
 
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <LinkTo @route="home" class="navbar-brand">Home</LinkTo>
+            </div>
+
+            <ul class="nav navbar-nav">
+                <li><LinkTo @route="BMI">BMI Calculator</LinkTo></li>
+                <li><LinkTo @route="book-ticket">Railway Reservation</LinkTo></li>
+                <li><LinkTo @route="registration">Student Form</LinkTo></li>
+                <li><LinkTo @route="social-media">Social Media</LinkTo></li>
+            </ul>
+        
+        </div>
+
+    </nav>
+    
 {{outlet}}
