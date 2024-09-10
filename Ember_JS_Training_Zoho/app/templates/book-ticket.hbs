@@ -1,1 +1,11 @@
-<TicketBooking />
+<TicketBooking 
+    @updTC={{this.updateTicketsCount}}
+    @loadPeople={{this.loadPeople}}
+/>
+{{#if this.isLoad}}
+    <TicketBookingPassenger
+        @model={{this.Tickets}}
+        @updatePeople={{this.updatePeople}}
+    />
+
+{{/if}}

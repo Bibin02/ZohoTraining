@@ -1,0 +1,24 @@
+{{page-title "SocialMedia"}}
+
+<h1> SocialMedia Page </h1>
+
+<div class="container">
+    {{#each this.model.data as |element|}}
+        <div class="post-box container">
+            <div class="image-box">
+                <img class="image-box" src={{element.src}} alt="post {{element.id}}">
+            </div>
+
+            <div class="data-box">
+                <div class="likes">{{element.likes}} Likes</div>
+                <div class="comments">{{element.comments}} Comments</div>
+                <div class="description">{{element.desc}}</div>
+                <div class="view-post"> <LinkTo @route="social-media.posts" @model={{element.id}} class="link-buttons">View Post</LinkTo> </div>
+            </div>
+        </div>
+    {{/each}}
+
+</div>
+
+
+{{outlet}}

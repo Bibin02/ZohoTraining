@@ -1,0 +1,21 @@
+<div class="train-container-2">
+    {{#each @model as |per_head|}}
+        <h3 class="heading-train">Passenger {{per_head.pid}} Details </h3>
+        <table class="passenger-table"><tbody>
+        <tr><td>Name of Person {{per_head.pid}} : </td><td><input id="pname-{{per_head.pid}}" type="text" placeholder="Name" required></td></tr>
+        <tr><td>Person {{per_head.pid}} Age : </td><td><input id="page-{{per_head.pid}}" type="number" placeholder="Age" required></td></tr>
+        <tr><td>Person {{per_head.pid}} Berth Preference: </td><td>
+            <select name="berth-pref-{{per_head.pid}}" id="b-pref-{{per_head.pid}}">
+                <option value="none">None</option> 
+                <option value="upper">Upper</option> 
+                <option value="lower">Lower</option> 
+                <option value="middle">Middle</option> 
+            </select>
+        </td></tr>
+        </tbody></table>
+    {{/each}}
+</div>
+<button type="submit" class="link-buttons" {{on "click" @updatePeople}} > Book Tickets </button>
+<button type="reset" class="link-buttons"> Reset Data </button>
+
+<LinkTo @route="home" class="link-buttons">View Tickets</LinkTo> 

@@ -1,3 +1,28 @@
 {{page-title "Book Train Tickets"}}
 
 <h1> Railway Ticket Reservation Portal </h1>
+
+<div class="train-container-1">
+	<h3 class="heading-train">Journey Details </h3>
+	<table><tbody>
+	<tr><td>Arrive From Location : </td><td><input type="text" placeholder="Arrive" required></td></tr>
+	<tr><td>Depart To Location : </td><td><input type="text" placeholder="Depart" required></td></tr>
+	<tr><td>Journey Date : </td><td><input type="date" required></td></tr>
+	<tr><td>Number of Tickets : </td><td>
+		<input type="number" {{on "input" @updTC}} >
+	</td></tr>
+	<tr><td>Booking Type : </td><td>
+		<select name="booking-type" id="b-type">
+			<option value="">- Select -</option>
+			<option value="acsleeper">A/C Sleeper</option> 
+			<option value="acseater">A/C Seater</option> 
+			<option value="gsleeper">General Sleeper</option> 
+			<option value="gseater">General Seater</option> 
+			<option value="ur">Unreserved</option> 
+		</select>
+	</td></tr>
+	</tbody></table>
+</div>
+
+<button type="submit" class="link-buttons" {{on "click" @loadPeople}} > Fill Passenger Details </button>
+

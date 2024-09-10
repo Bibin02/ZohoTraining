@@ -1,0 +1,94 @@
+/* General Styles */
+.post-box.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Image Styles */
+  .image-box {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    overflow: hidden;
+  }
+  
+  .image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  /* Data Box Styles */
+  .data-box {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .data-box .likes, .data-box .comments, .data-box .description {
+    margin: 10px 0;
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .view-post .likes, .description .comments {
+    font-weight: bold;
+    float: right;
+  }
+  
+  .data-box .view-post {
+    margin-top: 20px;
+  }
+  
+  /* Responsive Design */
+  
+  /* Tablet View (Medium screens) */
+  @media screen and (max-width: 768px) {
+    .post-box.container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .data-box {
+      padding: 10px;
+      text-align: center;
+    }
+  
+    .data-box .likes, .data-box .comments, .data-box .description {
+      font-size: 14px;
+      display: inline;
+    }
+  }
+  
+  /* Mobile View (Small screens) */
+  @media screen and (max-width: 480px) {
+    .post-box.container {
+      flex-direction: column;
+    }
+  
+    .image-box img {
+      width: 100%;
+    }
+  
+    .data-box {
+      padding: 8px;
+      text-align: center;
+    }
+  
+    .data-box .likes, .comments, .view-posts .description {
+      font-size: 12px;
+      display: inline;
+    }
+  }
+  

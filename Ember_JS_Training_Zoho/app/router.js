@@ -11,4 +11,8 @@ Router.map(function () {
   this.route('not-found', { path: '/*path' });
   this.route('home', { path: '/' });
   this.route('book-ticket');
+  this.route('registration');
+  this.route('social-media', function () {
+    this.route('posts', { path: 'posts/:pid' });
+  });
 });
